@@ -1,0 +1,100 @@
+<html>
+
+<head>
+	<title>Parcel Sandbox</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"></link>
+</head>
+
+<body>
+	<section class="section">
+		<div class="columns is-centered">
+			<div class="column is-8">
+				<div class="content">
+					<h1 class="title">Boggle Solver</h1>
+					<p>
+						Input your letters below and click 'submit'!
+					</p>
+					<table class="table is-bordered">
+						<tr class="row">
+							<td>
+								<input class="input" type="text" placeholder="-">
+							</td>
+							<td>
+								<input class="input" type="text" placeholder="-">
+							</td>
+							<td>
+								<input class="input" type="text" placeholder="-">
+							</td>
+							<td>
+								<input class="input" type="text" placeholder="-">
+							</td>
+						</tr>
+						<tr class="row">
+							<td>
+								<input class="input" type="text" placeholder="-">
+							</td>
+							<td>
+								<input class="input" type="text" placeholder="-">
+							</td>
+							<td>
+								<input class="input" type="text" placeholder="-">
+							</td>
+							<td>
+								<input class="input" type="text" placeholder="-">
+							</td>
+						</tr>
+						<tr class="row">
+							<td>
+								<input class="input" type="text" placeholder="-">
+							</td>
+							<td>
+								<input class="input" type="text" placeholder="-">
+							</td>
+							<td>
+								<input class="input" type="text" placeholder="-">
+							</td>
+							<td>
+								<input class="input" type="text" placeholder="-">
+							</td>
+						</tr>
+						<tr class="row">
+							<td>
+								<input class="input" type="text" placeholder="-">
+							</td>
+							<td>
+								<input class="input" type="text" placeholder="-">
+							</td>
+							<td>
+								<input class="input" type="text" placeholder="-">
+							</td>
+							<td>
+								<input class="input" type="text" placeholder="-">
+							</td>
+						</tr>
+					</table>
+				</div>
+				<button id="submitButton" class="button">Submit</button>
+			</div>
+		</div>
+	</section>
+	<hr>
+	<section class="section">
+		<div class="columns is-centered">
+			<div class="column is-8">
+				<div class="content">
+					<h2 class="subtitle">Results</h2>
+					<div id="boggleResults">
+						<div id="resultsNotification" class="notification has-text-centered">
+							Your results will appear here.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="src/boggle.js"></script>
+</body>
+
+</html>
