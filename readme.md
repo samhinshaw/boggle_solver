@@ -1,5 +1,7 @@
 # Boggle Solver
 
+[![View Boggle Solver](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/embed/1oy8wlm473?module=%2Fsrc%2Fboggle.js&view=preview)
+
 ## Dependencies
 
 * [JQuery](https://jquery.com) for DOM manipulation - ([npm](https://www.npmjs.com/package/jquery))
