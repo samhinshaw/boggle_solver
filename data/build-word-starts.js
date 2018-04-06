@@ -38,13 +38,22 @@ dictionary.forEach(word => {
 
 // deduplicate!
 const wordStartsSet = new Set(wordStarts);
+const deduplicatedWords = [...wordStartsSet];
 
-const filePath = join(__dirname, "word-starts.json");
+// write out word-starts dictionary in parts
+const parts = rangeInclusive(1, Math.ceil(deduplicatedWords.length / 50000));
 
-const wordStartsJSON = {
-  wordStarts: [...wordStartsSet]
-};
+parts.forEach(part => {
+  console.log(`Writing part ${part} to disk.`);
+  const partition = deduplicatedWords.splice(0, 50000);
 
-writeFile(filePath, wordStartsJSON, err => {
-  if (err) console.error(err);
+  const filePath = join(__dirname, `word-starts${part}.json`);
+
+  const wordStartsJSON = {
+    wordStarts: partition
+  };
+
+  writeFile(filePath, wordStartsJSON, err => {
+    if (err) console.error(err);
+  });
 });

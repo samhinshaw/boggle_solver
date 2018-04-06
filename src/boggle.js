@@ -10,7 +10,6 @@ const gridSize = 4;
 
 // Declaring in upper scope so we don't have to pass grid to every instance of findWords
 let grid = [];
-const words = [];
 
 // Once the user clicks submit...
 $("#submitButton").click(function handleUI() {
@@ -86,8 +85,7 @@ const findWords = function findWords(previousTiles, currentTile) {
     currentString += tile.letter;
   });
   // 2. If the current word is in the dictionary, add it!
-  if (dictionary.includes(currentString)) {
-    words.push(currentString);
+  if (dictionary.has(currentString)) {
     addWordToList(currentString);
   }
   // 3. Figure out what new tiles we have around us.
