@@ -7,6 +7,7 @@
 * [JQuery](https://jquery.com) for DOM manipulation - ([npm](https://www.npmjs.com/package/jquery))
 * [Bulma](https://bulma.io/) for quick styling - ([npm](https://www.npmjs.com/package/bulma))
 * [atebits/Words](https://github.com/atebits/Words) for english dictionary (specifically, [en.txt](https://github.com/atebits/Words/blob/master/Words/en.txt))
+* [range-inclusive](https://www.npmjs.com/package/range-inclusive) a microlibrary for generating arrays similar to R's `seq()`
 
 ## Feature Wishlist
 
