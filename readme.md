@@ -27,6 +27,12 @@ If I had more time, I would like to:
 
 Performance of the boggle solver I wrote is not fantastic, but is not awful. Along the way, I attempted to block non-fruitful paths wherever possible. Crucially, if we discover that the current word we are building is not the beginning of a word in the dictionary, we terminate that call. While `findStartOfWord()` is the most heavily weighted function in the call stack, its presence increases the performance of the search by more than an order of magnitude.
 
+### Update
+
+_Note: This was added after the 4hr time limit elapsed._
+
+After submitting this assignment, I realized that a Set would be a far superior data structure for my dictionary than an array. Sets are now native to JavaScript thanks to ES6! With approximately 1 extra hour, I implemented a Set which contains all of the beginnings of words in the dictionary in question. My original methodology was most heavily penalized by the `findStartOfWord()` method, so implementing `wordStartsSet.has()` cuts the processing time from ~12 seconds to ~600ms on my laptop. The [set branch](https://github.com/samhinshaw/boggle_solver/tree/set) of this repository, contains the code to build the set, as well as the updated methodology. [Link to deployed version.](https://codesandbox.io/embed/jjylj251x3?module=%2Fsrc%2Fboggle.js)
+
 ## Finding a Dictionary
 
 I wanted to reduce my time configuring and deploying as much as possible, so I decided to build my app on codesandbox.io. However, this meant I could not run a server, which made the dictionary querying more difficult. Had I written a server I could have easily read in a dictionary file in Node.js, or securely called an appropriate API without exposing credentials. To keep codesandbox.io viable and my solution simple, I decided to upload my dictionary as a JSON file. However, codesandbox.io has a very small file size limit! I wrote a quick R script to break down the `en.txt` file used in [word-list](https://www.npmjs.com/package/word-list) into small chunks, and write it out into JSON files. Then, the codesandbox.io file size limit circumvented, I uploaded these dictionary files and concat them on app load.
