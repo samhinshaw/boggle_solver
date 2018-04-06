@@ -2,7 +2,7 @@ import $ from "jquery";
 // For ease of implementation, the dictionary is brought in on app load.
 // Ideally this loading would be deferred, because we would
 // not need it to be loaded until the user has input their letters
-import { dictionary, relativePositions } from "./dictionary";
+import { dictionary, wordStartsSet, relativePositions } from "./dictionary";
 
 // Theoretically, this solver should work fine for a grid of any size!
 // However, I have only tested it with a grid size of 4.
@@ -124,17 +124,19 @@ const findWords = function findWords(previousTiles, currentTile) {
   // the current string is the beginning of a word in the dictionary. This is NOT a
   // cheap operation, but it is more performant than extending to every tile
   // on the board from every tile.
-  const possibleWords = dictionary.filter(function findStartOfWord(word) {
-    return word.startsWith(currentString);
-  });
+  // No longer need this because we have set method
+  // const possibleWords = dictionary.filter(function findStartOfWord(word) {
+  //   return word.startsWith(currentString);
+  // });
 
   ///////////////////////////////////////////////
   //             EARLY TERMINATION             //
   ///////////////////////////////////////////////
   // If our current string isn't the start of any word in the dictionary, end here as well
-  if (possibleWords.length < 1) {
+  if (!wordStartsSet.has(currentString)) {
     return false;
   }
+
   ///////////////////////////////////////////////
   //                  RECURSE                  //
   ///////////////////////////////////////////////

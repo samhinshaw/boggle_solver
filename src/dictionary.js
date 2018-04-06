@@ -11,6 +11,10 @@ import dict04 from "../data/dict-04.json";
 import dict05 from "../data/dict-05.json";
 import dict06 from "../data/dict-06.json";
 
+import { wordStarts } from "../data/word-starts.json";
+
+const wordStartsSet = new Set(wordStarts);
+
 // codesandbox doesn't like ...spread here because
 // it thinks it might be an infinite loop
 const dictionary = [].concat(
@@ -34,4 +38,4 @@ const relativePositions = [
   [-1, -1]
 ];
 
-export { dictionary, relativePositions };
+export { dictionary, wordStartsSet, relativePositions };
